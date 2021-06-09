@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+	<f:view>
+		<h:form>
+			<h:panelGrid columns="2">
+				Ad <h:inputText value="#{demoView.demo.ad}" />
+				Soyad <h:inputText value="#{demoView.demo.soyad}" />
+				Yaş <h:inputText value="#{demoView.demo.yas}" />
+				<h:commandButton action="#{demoView.kaydet()}" value="Kaydet"
+					rendered="#{demoView.demo.ad==null}" />
+				<h:commandButton action="#{demoView.duzenle()}" value="Guncelle"
+					rendered="#{demoView.demo.ad!=null}" />
+				<h:commandButton action="geri" value="Geri" />
+			</h:panelGrid>
+			<p:dataTable value="#{demoView.liste}" var="tbl">
+				<f:facet name="header">Kayit Listesi</f:facet>
+				<p:column>
+					<f:facet name="header">Kayit Duzenle</f:facet>
+					<h:commandLink value="Sec">
+						<f:setPropertyActionListener value="#{tbl}"
+							target="#{demoView.demo}" />
+					</h:commandLink>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Kayit Sil</f:facet>
+					<h:commandLink action="#{demoView.sil()}" value="Sil">
+						<f:setPropertyActionListener value="#{tbl}"
+							target="#{demoView.demo}" />
+					</h:commandLink>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Ad</f:facet>
+					<h:outputText value="#{tbl.ad}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Soyad</f:facet>
+					<h:outputText value="#{tbl.soyad}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">Yas</f:facet>
+					<h:outputText value="#{tbl.yas}" />
+				</p:column>
+
+
+			</p:dataTable>
+		</h:form>
+	</f:view>
+</body>
+</html>

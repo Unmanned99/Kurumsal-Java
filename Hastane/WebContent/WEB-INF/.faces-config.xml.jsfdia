@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#Giris.xhtml" PATH="/Giris.xhtml"
+  SHAPE="176,168,50,25" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#Giris.xhtml:0" NAME="item"
+   PATH="/Giris.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="geri::#KullaniciGiris.xhtml" NAME="output"
+    PATH="/KullaniciGiris.xhtml" TARGET="rules:#KullaniciGiris.xhtml"
+    TITLE="geri" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#KullaniciGiris.xhtml"
+  PATH="/KullaniciGiris.xhtml" SHAPE="456,168,50,25" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#KullaniciGiris.xhtml:0" NAME="item"
+   PATH="/KullaniciGiris.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="dogru::#Giris.xhtml" NAME="output"
+    PATH="/Giris.xhtml" TARGET="rules:#Giris.xhtml" TITLE="dogru" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="yanlis::#Hata.xhtml" NAME="output1"
+    PATH="/Hata.xhtml" TARGET="rules:#Hata.xhtml" TITLE="yanlis" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#Hata.xhtml" PATH="/Hata.xhtml"
+  SHAPE="672,145,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#Hata.xhtml:0" NAME="item" PATH="/Hata.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="geri::#KullaniciGiris.xhtml" NAME="output"
+    PATH="/KullaniciGiris.xhtml" TARGET="rules:#KullaniciGiris.xhtml"
+    TITLE="geri" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>
